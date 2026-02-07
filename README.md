@@ -2,6 +2,10 @@
 
 Minimal GUI tool to inspect and rename part labels inside encrypted **XZZ PCB** files.
 
+<p align="center">
+  <img src="animation.gif" alt="Demo animation" />
+</p>
+
 ## What does this tool do?
 
 This tool makes boardviews easier to use by letting you replace opaque, sequential part names with familiar IC/part names, and by keeping those mappings shareable for teammates and future sessions.
@@ -9,6 +13,7 @@ This tool makes boardviews easier to use by letting you replace opaque, sequenti
 - **Make boardviews readable**: many PCB files use opaque sequential labels for parts. This tool lets you replace those with familiar IC/part names so boardview tools and reviewers immediately understand what each component is.
 - **Share and standardize mappings**: the `.partnames` file contains a JSON array of mappings. You can manually edit this file using a text editor, or share it without having to share the `.pcb` file. This way everyone can apply the part name mappings to their copy of the `.pcb` file and see the same human-friendly names. This also allows users to easily keep track of name mappings using version control.
 - **Future updates**: mappings let you add or extend name part name changes over time - you don't need to perform every edit in a single session. Save and share `.partnames` files, then apply or extend them later as the mapping set grows.
+- **Compatibility**: The produced output `.pcb` file will be compatibile with both [OpenBoardView](https://github.com/OpenBoardView/OpenBoardView) (tested on v9.95.2) and [FlexBV](https://pldaniels.com/flexbv5/) (tested on v5.1244)
 
 ## Installation
 
