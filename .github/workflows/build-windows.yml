@@ -36,10 +36,9 @@ jobs:
         run: |
           build_env\Scripts\pip.exe list
 
-      - name: Build EXE (PyInstaller with spec to include PySide6 plugins)
+      - name: Build EXE with PyInstaller
         run: |
-          # Run PyInstaller from the isolated venv so only PySide6 is available.
-          build_env\Scripts\pyinstaller.exe --noconfirm pcb_part_renamer.spec
+          build_env\Scripts\pyinstaller.exe --noconfirm --onefile --windowed pcb_part_renamer.pyw
 
       - name: List dist for debug
         run: dir dist /s
