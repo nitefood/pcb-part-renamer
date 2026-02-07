@@ -32,16 +32,9 @@ jobs:
           # Install only the required runtime+build packages (avoid installing PyQt from requirements.txt)
           build_env\Scripts\pip.exe install pyinstaller pyinstaller-hooks-contrib PySide6 pycryptodome
 
-      - name: Show venv packages (debug)
-        run: |
-          build_env\Scripts\pip.exe list
-
       - name: Build EXE with PyInstaller
         run: |
           build_env\Scripts\pyinstaller.exe --noconfirm --onefile --windowed pcb_part_renamer.pyw
-
-      - name: List dist for debug
-        run: dir dist /s
 
       - name: Create GitHub Release
         id: create_release
