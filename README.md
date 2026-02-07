@@ -16,7 +16,7 @@ There are two easy ways to run the tool on Windows, and a cross-platform-from-so
 
 ### Windows - standalone executable
 
-- Download and run `pcb_part_renamer.exe` from the repository [Releases](/releases) page
+- Download and run `pcb_part_renamer.exe` from the repository [Releases](https://github.com/nitefood/pcb-part-renamer/releases/latest) page
 
 ### From source (cross-platform; requires Python)
 
