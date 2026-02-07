@@ -29,7 +29,7 @@ jobs:
         run: |
           python -m venv build_env
           build_env\Scripts\python.exe -m pip install --upgrade pip
-          REM Install only the required runtime+build packages (avoid installing PyQt from requirements.txt)
+          # Install only the required runtime+build packages (avoid installing PyQt from requirements.txt)
           build_env\Scripts\pip.exe install pyinstaller pyinstaller-hooks-contrib PySide6 pycryptodome
 
       - name: Show venv packages (debug)
@@ -38,7 +38,7 @@ jobs:
 
       - name: Build EXE (PyInstaller with spec to include PySide6 plugins)
         run: |
-          REM Run PyInstaller from the isolated venv so only PySide6 is available.
+          # Run PyInstaller from the isolated venv so only PySide6 is available.
           build_env\Scripts\pyinstaller.exe --noconfirm pcb_part_renamer.spec
 
       - name: List dist for debug
