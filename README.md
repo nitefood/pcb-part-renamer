@@ -10,7 +10,7 @@ Minimal GUI tool to inspect and rename part labels inside encrypted [**XZZ .pcb*
 
 This tool makes boardviews easier to use by letting you **replace opaque, sequential part names with familiar IC/part names** inside encrypted **XZZ .pcb** boardview files, and by keeping those mappings shareable for teammates and future sessions.
 
-- **Make boardviews readable**: many PCB files use opaque sequential labels for parts. This tool lets you replace those with familiar IC/part names to immediately understand what each component is while inspecting the boardview.
+- **Make boardviews readable**: encrypted PCB files use opaque sequential labels for parts. This tool lets you replace those with familiar IC/part names to immediately understand what each component is while inspecting the boardview.
 - **Share and standardize mappings**: the `.partnames` file is a simple text file in JSON format, containing the list of all the parts you have renamed for a specific PCB file. You can freely edit this file using this tool or just a text editor, or share it without having to share the `.pcb` file. This way everyone can apply the part name mappings to their copy of the `.pcb` file and see the same human-friendly names. This also allows users to easily keep track of name mappings using version control.
 - **Future updates**: mappings let you add or extend part name changes over time - you don't need to rename every part in a single session. Save `.partnames` files, extend them later as the mapping set grows, and apply the new names to the original `.pcb` file iteratively.
 - **Compatibility**: The produced output `.pcb` file will be compatibile with both [OpenBoardView](https://github.com/OpenBoardView/OpenBoardView) (tested on v9.95.2) and [FlexBV](https://pldaniels.com/flexbv5/) (tested on v5.1244)
@@ -56,7 +56,7 @@ python pcb_part_renamer.pyw
 - Click "Save modified .pcb" to pick where to save the modified PCB
 - **Mappings are saved alongside the original PCB as `*.partnames`**.
 
-**Acknowledgements**
+## Acknowledgements
 
 - This project is inspired by (and builds on) the amazing reverse engineering work on the XXZPCB format by [slimeinacloak](https://github.com/slimeinacloak/XZZPCB-ImHex).
 - Thanks [Paul L. Daniels](https://github.com/inflex) for the great support and for creating the awesome [FlexBV](https://pldaniels.com/flexbv5/)!
