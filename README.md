@@ -1,6 +1,6 @@
 # PCB Part Renamer
 
-Minimal GUI tool to inspect and rename part labels inside encrypted **XZZ PCB** files.
+Minimal GUI tool to inspect and rename part labels inside encrypted [**XZZ .pcb** boardview files](https://github.com/slimeinacloak/XZZPCB-ImHex/tree/main/Example%20PCB%20Files).
 
 <p align="center">
   <img src="animation.gif" alt="Demo animation" />
@@ -8,22 +8,22 @@ Minimal GUI tool to inspect and rename part labels inside encrypted **XZZ PCB** 
 
 ## What does this tool do?
 
-This tool makes boardviews easier to use by letting you replace opaque, sequential part names with familiar IC/part names, and by keeping those mappings shareable for teammates and future sessions.
+This tool makes boardviews easier to use by letting you **replace opaque, sequential part names with familiar IC/part names** inside encrypted **XZZ .pcb** boardview files, and by keeping those mappings shareable for teammates and future sessions.
 
-- **Make boardviews readable**: many PCB files use opaque sequential labels for parts. This tool lets you replace those with familiar IC/part names so boardview tools and reviewers immediately understand what each component is.
-- **Share and standardize mappings**: the `.partnames` file contains a JSON array of mappings. You can manually edit this file using a text editor, or share it without having to share the `.pcb` file. This way everyone can apply the part name mappings to their copy of the `.pcb` file and see the same human-friendly names. This also allows users to easily keep track of name mappings using version control.
-- **Future updates**: mappings let you add or extend name part name changes over time - you don't need to perform every edit in a single session. Save and share `.partnames` files, then apply or extend them later as the mapping set grows.
+- **Make boardviews readable**: many PCB files use opaque sequential labels for parts. This tool lets you replace those with familiar IC/part names to immediately understand what each component is while inspecting the boardview.
+- **Share and standardize mappings**: the `.partnames` file is a simple text file in JSON format, containing the list of all the parts you have renamed for a specific PCB file. You can freely edit this file using this tool or just a text editor, or share it without having to share the `.pcb` file. This way everyone can apply the part name mappings to their copy of the `.pcb` file and see the same human-friendly names. This also allows users to easily keep track of name mappings using version control.
+- **Future updates**: mappings let you add or extend part name changes over time - you don't need to rename every part in a single session. Save `.partnames` files, extend them later as the mapping set grows, and apply the new names to the original `.pcb` file iteratively.
 - **Compatibility**: The produced output `.pcb` file will be compatibile with both [OpenBoardView](https://github.com/OpenBoardView/OpenBoardView) (tested on v9.95.2) and [FlexBV](https://pldaniels.com/flexbv5/) (tested on v5.1244)
 
 ## Installation
 
-There are two easy ways to run the tool on Windows, and a cross-platform-from-source option for users who prefer to run the Python script directly.
+You can run the tool by running the standalone `.exe` file (Windows only) or directly from source (cross-platform):
 
-### Windows - standalone executable
+### Executable file (Windows only)
 
 - Download and run `pcb_part_renamer.exe` from the repository [Releases](https://github.com/nitefood/pcb-part-renamer/releases/latest) page
 
-### From source (cross-platform; requires Python)
+### From source (cross-platform, requires Python)
 
 1. Clone the repository and enter the folder:
 
@@ -48,12 +48,13 @@ python pcb_part_renamer.pyw
 
 ## Usage instructions
 
-- Click "Open source .pcb" to load a board file. If a sibling `.partnames` file is present you will be offered to load it.
-- Use the search box to filter and jump to parts (fuzzy/subsequence matching).
+- Click "Open source .pcb" to load a board file. If a sibling `.partnames` file is present you will be offered to load it
+- Use the search box to filter and jump to parts
 - Double-click a part to edit the new name
   > _Note: the new name can not be longer than the old name, due to a limitation in the re-encrypting code. Pull requests welcome :-)_
-- The right-side "Changed Parts" panel lists current edits (click an entry to jump to that part).
-- Click "Save modified .pcb" to pick where to save the modified PCB. **Mappings are saved alongside the original PCB as `*.partnames`**.
+- The right-side "Changed Parts" panel lists current edits (click an entry to jump to that part)
+- Click "Save modified .pcb" to pick where to save the modified PCB
+- **Mappings are saved alongside the original PCB as `*.partnames`**.
 
 **Acknowledgements**
 
